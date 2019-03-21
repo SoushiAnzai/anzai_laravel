@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('home', 'UserController@index')->name('home');
+Route::resource('post', 'PostController', ['only' => ['index','create', 'store', 'show', 'edit', 'update', 'destroy']]);
+Route::resource('comment', 'CommentController', ['only' => ['store']]);
